@@ -15,8 +15,6 @@ router.get("/", (req, res) => {
   })
     .then((data) => res.json(data))
     .catch((err) => res.status(500).json(err));
-  // be sure to include its associated Products
-  // be sure to include its associated Product data
 });
 
 router.get("/:id", (req, res) => {
@@ -31,7 +29,6 @@ router.get("/:id", (req, res) => {
   })
     .then((data) => res.json(data))
     .catch((err) => res.status(500).json(err));
-  // be sure to include its associated Product data
 });
 
 router.post("/", (req, res) => {

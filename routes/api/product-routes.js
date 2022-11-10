@@ -16,17 +16,23 @@ router.get('/', (req, res) => {
   })
     .then((data) => res.json(data))
     .catch((err) => res.status(500).json(err));
-  // be sure to include its associated Category and Tag data
+
 });
 
 // get one product
 router.get('/:id', (req, res) => {
   // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+  Product.findByPk(req.params.id)
+  .then((data) => res.json(data))
+  .catch((err) => res.status(500).json(err));
+
 });
 
 // create new product
 router.post('/', (req, res) => {
+  Product.create(req.body)
+  .then((data) => res.json(data))
+  .catch((err) => res.status(500).json(err));
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -47,7 +53,6 @@ router.post('/', (req, res) => {
         });
         return ProductTag.bulkCreate(productTagIdArr);
       }
-      // if no product tags, just respond
       res.status(200).json(product);
     })
     .then((productTagIds) => res.status(200).json(productTagIds))
@@ -59,7 +64,6 @@ router.post('/', (req, res) => {
 
 // update product
 router.put('/:id', (req, res) => {
-  // update product data
   Product.update(req.body, {
     where: {
       id: req.params.id,
@@ -94,7 +98,6 @@ router.put('/:id', (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
       res.status(400).json(err);
     });
 });
