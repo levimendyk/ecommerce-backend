@@ -26,7 +26,7 @@ GIVEN a functional Express.js API
 <li>THEN I am able to successfully create, update, and delete data in my database</li>
 </ul>
 
-[Deployed Site](https://placeholder)
+[Video Tutorial](https://drive.google.com/file/d/1esxSwqJGUVLX8hfA_vEMGczgt45ra-P4/view)
 
 Contribution guidelines for this project
 <img src="./assets/images/13-orm-homework-demo-01.gif"/>
